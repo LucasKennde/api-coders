@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 import { decode, sign, verify } from 'jsonwebtoken';
 
-const privateKey = 'dev-private-key';
+const privateKey = process.env.JWT_PRIVATE_KEY || 'dev-private-key';
 
 @Injectable()
 export class AuthService {
